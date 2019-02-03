@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,82 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TebakAngka" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEBAK ANGKA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1U-ON-3er">
+                                <rect key="frame" x="107.5" y="60" width="160" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Masukan Angka 1-10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBG-ah-0ZM">
+                                <rect key="frame" x="108" y="139" width="159" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eAI-no-FHi">
+                                <rect key="frame" x="16" y="178" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="oLB-Qk-Lzj"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="userInput:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="eKX-KT-bBZ"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhu-ho-Oe9">
+                                <rect key="frame" x="158.5" y="238" width="58" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Tebak!"/>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OtK-1K-JLZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tebakanmu Salah! Angka yang benar adalah 10" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRM-WZ-Cuz">
+                                <rect key="frame" x="16" y="295" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="wmd-r4-p4l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rhu-ho-Oe9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="13X-CG-wt8"/>
+                            <constraint firstItem="rhu-ho-Oe9" firstAttribute="top" secondItem="eAI-no-FHi" secondAttribute="bottom" constant="30" id="2kt-gm-V3q"/>
+                            <constraint firstItem="XRM-WZ-Cuz" firstAttribute="top" secondItem="rhu-ho-Oe9" secondAttribute="bottom" constant="21" id="KZl-FR-N00"/>
+                            <constraint firstItem="rhu-ho-Oe9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R1o-I0-ijS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eAI-no-FHi" secondAttribute="trailing" constant="16" id="Uk9-bA-1gm"/>
+                            <constraint firstItem="s1U-ON-3er" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xg6-cA-M3Z"/>
+                            <constraint firstItem="eAI-no-FHi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z26-2K-UXA"/>
+                            <constraint firstItem="s1U-ON-3er" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="ZWI-5n-lXf"/>
+                            <constraint firstItem="xBG-ah-0ZM" firstAttribute="top" secondItem="s1U-ON-3er" secondAttribute="bottom" constant="50" id="hKc-Xx-8mD"/>
+                            <constraint firstItem="s1U-ON-3er" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jvb-v6-8RP"/>
+                            <constraint firstItem="xBG-ah-0ZM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mNK-f5-9UG"/>
+                            <constraint firstItem="XRM-WZ-Cuz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nzC-Hg-y72"/>
+                            <constraint firstItem="eAI-no-FHi" firstAttribute="top" secondItem="xBG-ah-0ZM" secondAttribute="bottom" constant="18" id="q2C-ai-lwg"/>
+                            <constraint firstItem="eAI-no-FHi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="vhU-Qk-RMi"/>
+                            <constraint firstItem="XRM-WZ-Cuz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="yfm-xo-GGC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XRM-WZ-Cuz" secondAttribute="trailing" constant="16" id="zvO-YV-7x1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="XRM-WZ-Cuz" id="McM-HO-Lhe"/>
+                        <outlet property="userInput" destination="eAI-no-FHi" id="eid-Sl-bvl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
